@@ -6,10 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="Site">
+
   <div class="navbar-wrapper">
-
-
           <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
               <div class="navbar-header">
@@ -22,16 +21,28 @@
                 <a class="navbar-brand" href="#">Flixter</a>
               </div>
               <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#about">About</a></li>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><p class="notice"><%= notice %></p></li>
+                  <li><p class="alert"><%= alert %></p></li>
+                  <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+                  <li><%= link_to 'Sign In', new_user_session_path %></li>
                   <li><a href="#contact">Contact</a></li>
                 </ul>
               </div>
             </div>
           </nav>
       </div>
-<%= yield %>
+      <div class="Site-content">
+  <%= yield %>
+  </div>
+  <br class="clr" />
+  <div id="footer">
+    <div class="container">
+      <b>Footer Here</b>
+      <br />
+      <%= link_to 'Link', '#' %>
+    </div>
+  </div>
 
 </body>
 </html>
