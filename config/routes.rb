@@ -2,25 +2,27 @@ Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-root 'static_pages#index'
-
-resources :courses, only: [:index, :show]
-
-namespace :instructor do
-    resources :courses, only: [:new, :create, :show]
+  root 'static_pages#index'
+  
+  resources :courses, only: [:index, :show]
+  
+  namespace :instructor do
+    resources :courses, only: [:new, :create, :show] do
+      resources :sections, only: [:new, :create]
+    end
   end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+  
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
+  
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  
   # Example resource route with options:
   #   resources :products do
   #     member do
@@ -32,13 +34,13 @@ namespace :instructor do
   #       get 'sold'
   #     end
   #   end
-
+  
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-
+  
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments
@@ -46,14 +48,14 @@ namespace :instructor do
   #       get 'recent', on: :collection
   #     end
   #   end
-
+  
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
-
+  
   # Example resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
