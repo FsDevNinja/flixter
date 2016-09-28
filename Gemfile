@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
+gem "fog"
+gem "figaro"
 gem 'simple_form'
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'devise'
 gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
