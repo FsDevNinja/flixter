@@ -1,4 +1,6 @@
 class Course < ActiveRecord::Base
+  mount_uploader :Image, ImageUploader
+  has_one :Image
   belongs_to :user
   has_many :sections
   
