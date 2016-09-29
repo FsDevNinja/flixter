@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem "fog"
 gem 'mini_magick', '~> 4.3.1'
+gem 'carrierwave-aws'
 gem "figaro"
 gem 'simple_form'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
