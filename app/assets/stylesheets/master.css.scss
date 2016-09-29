@@ -25,7 +25,7 @@ body {
 /* Set the fixed height of the footer here */
 
 .navbar {
-
+  
   border-radius:0;
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 200;
@@ -41,11 +41,11 @@ body {
 }
 .hero {
   background: url('hero.jpg') no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
-background-size: cover;
-height:570px;
-box-shadow: 0px 3px 8px #2a2a2a;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height:570px;
+  box-shadow: 0px 3px 8px #2a2a2a;
 }
 
 .btn {
@@ -72,7 +72,7 @@ box-shadow: 0px 3px 8px #2a2a2a;
 body {
   background-color: rbga(255,255,255,.5);
   background: url('bg.png');
-
+  
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 
@@ -105,7 +105,7 @@ body {
 
 .Site {
   display: flex;
-
+  
   min-height: 100vh;
   flex-direction: column;
 }
@@ -120,4 +120,28 @@ body {
   border-radius: 3px;
   padding:8px;
   margin:10px;
+}
+
+.lesson {
+  background-color:black;
+  margin-top:10px;
+  height:130px;
+  padding: 5px;
+}
+
+.section {
+  border: 1px solid;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding: 20px;
+}
+.lesson a {
+  color:white;
+  font-family: "Helvetica Neue",Helvetica;
+  font-weight:100;
+  font-size: 15px;
+}
+
+.lesson a b {
+  font-weight: 100;
+  font-size:20px;
 }
