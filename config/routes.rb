@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resource :dashboard, only: [:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root 'static_pages#index'
@@ -12,10 +13,10 @@ Rails.application.routes.draw do
     resources :lessons, only: [:update]
     resources :sections, only: [:update]
     resources :sections, only: [] do
-      resources :lessons, only: [:new, :create]
+      resources :lessons, only: [:create]
     end
     resources :courses, only: [:new, :create,:update, :show] do
-      resources :sections, only: [:new, :create]
+      resources :sections, only: [:create]
     end
   end
   # You can have the root of your site routed with "root"
