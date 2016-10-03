@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'jquery-ui-rails'
 gem 'ranked-model'
 gem 'stripe'
 gem "fog"
