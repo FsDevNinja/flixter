@@ -5,7 +5,7 @@ ul {
   list-style-type: none;
 }
 
-$footer-height: 100px;
+$footer-height: 150px;
 
 html,
 body {
@@ -94,28 +94,29 @@ body {
 }
 
 #footer {
-  height:$footer-height;
+  min-height:$footer-height;
   color:white;
   background-color: rgba(36,32,33,0.9);
   font-family: "Helvetica Neue",Helvetica;
   padding:10px 0px;
   margin-top:30px;
+  font-weight:100;
 }
 #footer a {
   color:white;
   font-weight:100;
 }
 
-.Site {
-  display: flex;
-  
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.Site-content {
-  flex: 1;
-}
+// .Site {
+//   display: flex;
+//
+//   min-height: 100vh;
+//   flex-direction: column;
+// }
+//
+// .Site-content {
+//   flex: 1;
+// }
 
 .field_with_errors {
   color: #ff3333;
@@ -181,4 +182,13 @@ ul .header {
 
 ul .header .glyphicon {
   font-size:20px;
+}
+
+.social-button {
+  width: 32px;
+  margin:4px;
+}
+
+.social a:hover {
+  text-decoration:none;
 }

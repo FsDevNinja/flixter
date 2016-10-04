@@ -45,11 +45,42 @@
   <br class="clr" />
   <div id="footer">
     <div class="container">
-      <b>Teachers</b>
-      <br />
-      <%= link_to 'Teach a Course', new_instructor_course_path %>
+      <div class="col-xs-12 col-sm-3">
+        <b>Teachers</b>
+        <br />
+        <%= link_to 'Teach a Course', new_instructor_course_path %>
+        <br />
+        <%= link_to 'My Dashboard', dashboard_path %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <b>About</b>
+        <br />
+        <%= link_to 'Team', '#' %>
+        <br />
+        <%= link_to 'Careers', '#' %>
+        <br />
+        <%= link_to 'Privacy Policy', privacy_path %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <b>Contact</b>
+        <br />
+        Matt@mbtdesigns.com
+        <br />
+        7724 Mouse Creek Rd NW
+        <br />
+        Cleveland TN, 37312
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <b>Social</b>
+        <br />
+        <br />
+        <%= link_to 'http://github.com/makproductions06' do %>
+        <%= image_tag 'github.png', class: 'social-button' %>
+        <% end %>
+        <%= image_tag 'linkedin.png', class: 'social-button' %>
+        <%= image_tag 'twitter.png', class: 'social-button' %>
+      </div>
     </div>
   </div>
-  
 </body>
 </html>

@@ -1,5 +1,5 @@
-class AddImagesToCourses < ActiveRecord::Migration
+class AddimagesToCourses < ActiveRecord::Migration
   def change
-    add_column :courses, :Image, :string
+    add_column :courses, :image, :string
   end
 end
