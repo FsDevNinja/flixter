@@ -7,80 +7,100 @@
   <%= csrf_meta_tags %>
   <link href="https://vjs.zencdn.net/5.0.2/video-js.css" rel="stylesheet">
   <script src="https://vjs.zencdn.net/5.0.2/video.js"></script>
-</head>
-<body class="Site">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.js"></script>
   
-  <div class="navbar-wrapper">
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to 'Flixter', root_url, class: 'navbar-brand' %>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><p class="notice"><%= notice %></p></li>
-            <li><p class="alert"><%= alert %></p></li>
-            <li><%= link_to 'See All Courses', courses_path %></li>
-            <% if user_signed_in? %>
-            <li><%= link_to 'My Dashboard', dashboard_path %></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-            <% else %>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class="Site-content">
-    <%= yield %>
-  </div>
+</head>
+<body>
+  <header id="header">
+    <h1><%= link_to 'Flixter', root_url %></h1>
+  </header>
+  <nav id="navigation">
+    <ul>
+      <li><%= link_to 'Home', root_url %></li>
+      <li><%= link_to 'See All Courses', courses_path %></li>
+      <% if user_signed_in? %>
+      <li><%= link_to 'My Dashboard', dashboard_path %></li>
+      <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+      <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <li><%= link_to 'Sign In', new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+  <%= yield %>
   <br class="clr" />
-  <div id="footer">
-    <div class="container">
-      <div class="col-xs-12 col-sm-3">
-        <b>Teachers</b>
-        <br />
-        <%= link_to 'Teach a Course', new_instructor_course_path %>
-        <br />
-        <%= link_to 'My Dashboard', dashboard_path %>
-      </div>
-      <div class="col-xs-12 col-sm-3">
-        <b>About</b>
-        <br />
-        <%= link_to 'Team', '#' %>
-        <br />
-        <%= link_to 'Careers', '#' %>
-        <br />
-        <%= link_to 'Privacy Policy', privacy_path %>
-      </div>
-      <div class="col-xs-12 col-sm-3">
-        <b>Contact</b>
-        <br />
-        Matt@mbtdesigns.com
-        <br />
-        7724 Mouse Creek Rd NW
-        <br />
-        Cleveland TN, 37312
-      </div>
-      <div class="col-xs-12 col-sm-3">
-        <b>Social</b>
-        <br />
-        <br />
-        <%= link_to 'http://github.com/makproductions06' do %>
-        <%= image_tag 'github.png', class: 'social-button' %>
-        <% end %>
-        <%= image_tag 'linkedin.png', class: 'social-button' %>
-        <%= image_tag 'twitter.png', class: 'social-button' %>
-      </div>
-    </div>
-  </div>
+  
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('#fullpage').fullpage({
+      //Navigation
+      menu: '#menu',
+      lockAnchors: false,
+      anchors:['Home', 'Course1', 'Course2', 'Course3', 'footer'],
+      navigation: true,
+      navigationPosition: 'right',
+      navigationTooltips: ['Home', 'Featured_1','Featured_2','Featured_3', 'Footer'],
+      showActiveTooltip: false,
+      slidesNavigation: true,
+      slidesNavPosition: 'bottom',
+      
+      //Scrolling
+      css3: true,
+      scrollingSpeed: 700,
+      autoScrolling: true,
+      fitToSection: true,
+      fitToSectionDelay: 1000,
+      scrollBar: false,
+      easing: 'easeInOutCubic',
+      easingcss3: 'ease',
+      loopBottom: false,
+      loopTop: false,
+      loopHorizontal: true,
+      continuousVertical: false,
+      continuousHorizontal: false,
+      scrollHorizontally: false,
+      interlockedSlides: false,
+      resetSliders: false,
+      fadingEffect: false,
+      normalScrollElements: '#element1, .element2',
+      scrollOverflow: false,
+      scrollOverflowOptions: null,
+      touchSensitivity: 15,
+      normalScrollElementTouchThreshold: 5,
+      bigSectionsDestination: null,
+      
+      //Accessibility
+      keyboardScrolling: true,
+      animateAnchor: true,
+      recordHistory: true,
+      
+      //Design
+      controlArrows: true,
+      verticalCentered: true,
+      sectionsColor : ['#ccc', '#fff'],
+      paddingTop: '',
+      paddingBottom: '',
+      fixedElements: '.header, .navigation',
+      responsiveWidth: 0,
+      responsiveHeight: 0,
+      responsiveSlides: false,
+      
+      //Custom selectors
+      sectionSelector: '.section',
+      slideSelector: '.slide',
+      
+      //events
+      onLeave: function(index, nextIndex, direction){},
+      afterLoad: function(anchorLink, index){},
+      afterRender: function(){},
+      afterResize: function(){},
+      afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+      onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+    });
+    
+  });
+  </script>
 </body>
 </html>

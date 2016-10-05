@@ -1,27 +1,68 @@
-<div class="hero">
-
-  <div class="frosty text-center">
-    <br /><br /><br /><br /><br /><br /><br /><br />
-
-  <h1>Learn Magic from the Pros</h1>
-
-  <h2>I'm an illusionist, Michael.</h2>
-  <br />
-   <%= link_to 'Learn More', courses_path, class: 'btn btn-success' %>
-   <br /><br />
-   </div>
-</div>
-<br />
-<div class="col-xs-10 col-xs-offset-1 features text-center">
-  <div class="col-sm-4">
-    <h3>Feature 1</h3>
+<div id="fullpage">
+  <div class="section"></div>
+  <% @featured_courses.each do |course| %>
+  <div class="section" style="background-image: url(<%= course.image %>)">
+    
+    <div class="course_info col-xs-12 col-sm-6">
+      <p class="category">Featured Course</p>
+      <h1 class="featured-course-title"><%= link_to course.title, course_path(course) %></h1>
+      <hr class="featued-course-title-hr">
+      
+      <div class="col-xs-12 col-sm-4"><%= image_tag course.image, class: 'featured-course-img' %></div>
+      <div class="view_course col-xs-12 col-sm-8">
+        <p class="feature-description"><%= truncate course.description, :length   => 180, :separator => /\w/,
+        :omission => "..." %></p>
+        <br class="clr">
+        <ul class="tags">
+          <li class="tag">Fundamentals</li>
+          <li class="tag">Photography</li>
+          <li class="tag">Beginner</li>
+        </ul>
+        <%= link_to 'View Course', course_path(course), class: 'btn btn-primary btn-large' %>
+      </div>
+    </div>
+    
+    <div class="section-bg" ></div>
   </div>
-
-  <div class="col-sm-4">
-    <h3>Feature 2</h3>
-  </div>
-
-  <div class="col-sm-4">
-    <h3>Feature 3</h3>
+  
+  <% end %>
+  <div id="home-footer" class="section">
+    <div class="container">
+      <div class="col-xs-12 col-sm-3">
+        <b>Teachers</b>
+        <br />
+        <%= link_to 'Teach a Course', new_instructor_course_path %>
+        <br />
+        <%= link_to 'My Dashboard', dashboard_path %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <b>About</b>
+        <br />
+        <%= link_to 'Team', '#' %>
+        <br />
+        <%= link_to 'Careers', '#' %>
+        <br />
+        <%= link_to 'Privacy Policy', privacy_path %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <b>Contact</b>
+        <br />
+        Matt@mbtdesigns.com
+        <br />
+        7724 Mouse Creek Rd NW
+        <br />
+        Cleveland TN, 37312
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <b>Social</b>
+        <br />
+        <br />
+        <%= link_to 'http://github.com/makproductions06' do %>
+        <%= image_tag 'github.png', class: 'social-button' %>
+        <% end %>
+        <%= image_tag 'linkedin.png', class: 'social-button' %>
+        <%= image_tag 'twitter.png', class: 'social-button' %>
+      </div>
+    </div>
   </div>
 </div>
