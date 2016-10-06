@@ -1,3 +1,4 @@
+
 <div id="fullpage">
   <% @featured_courses.each do |course| %>
   <div class="section" style="background-image: url(<%= course.image %>)">
@@ -37,7 +38,7 @@
       <br />
       <%= link_to 'My Dashboard', dashboard_path %>
     </div>
-    <div class="col-sm-12 col-md-3">
+    <div class="col-sm-12 col-md-3 about">
       <b>About</b>
       <br />
       <%= link_to 'Team', '#' %>
@@ -46,25 +47,113 @@
       <br />
       <%= link_to 'Privacy Policy', privacy_path %>
     </div>
-    <div class="col-sm-12 col-md-3">
+    <div class="col-sm-12 col-md-3 contact">
       <b>Contact</b>
       <br />
-      Matt@mbtdesigns.com
+      Matt@fsdevninja.com
       <br />
-      7724 Mouse Creek Rd NW
+      1234 Awesome Street
       <br />
-      Cleveland TN, 37312
+      Chattanooga TN, 37312
     </div>
-    <div class="col-sm-12 col-md-3">
+    <div class="col-sm-12 col-md-3 social">
       <b>Social</b>
       <br />
       <br />
       <%= link_to 'http://github.com/makproductions06' do %>
       <%= image_tag 'github.png', class: 'social-button' %>
       <% end %>
+      <%= link_to 'https://www.linkedin.com/in/mbtdesigns' do %>
       <%= image_tag 'linkedin.png', class: 'social-button' %>
+      <% end %><%= link_to 'http://twitter.com/fsdevninja' do %>
       <%= image_tag 'twitter.png', class: 'social-button' %>
+      <% end %>
+      
     </div>
     
   </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    //Navigation
+    menu: '#menu',
+    lockAnchors: false,
+    anchors:['Course1', 'Course2', 'Course3', 'footer'],
+    navigation: true,
+    navigationPosition: 'right',
+    navigationTooltips: ['Featured_1','Featured_2','Featured_3', 'Footer'],
+    showActiveTooltip: false,
+    slidesNavigation: true,
+    slidesNavPosition: 'bottom',
+    
+    //Scrolling
+    css3: true,
+    scrollingSpeed: 700,
+    autoScrolling: true,
+    fitToSection: true,
+    fitToSectionDelay: 1000,
+    scrollBar: false,
+    easing: 'easeInOutCubic',
+    easingcss3: 'ease',
+    loopBottom: false,
+    loopTop: false,
+    loopHorizontal: true,
+    continuousVertical: false,
+    continuousHorizontal: false,
+    scrollHorizontally: false,
+    interlockedSlides: false,
+    resetSliders: false,
+    fadingEffect: false,
+    normalScrollElements: '#element1, .element2',
+    scrollOverflow: false,
+    scrollOverflowOptions: null,
+    touchSensitivity: 15,
+    normalScrollElementTouchThreshold: 5,
+    bigSectionsDestination: null,
+    
+    //Accessibility
+    keyboardScrolling: true,
+    animateAnchor: true,
+    recordHistory: true,
+    
+    //Design
+    controlArrows: true,
+    verticalCentered: true,
+    sectionsColor : [],
+    paddingTop: '',
+    paddingBottom: '',
+    fixedElements: '',
+    responsiveWidth: 0,
+    responsiveHeight: 0,
+    responsiveSlides: true,
+    
+    //Custom selectors
+    sectionSelector: '.section',
+    slideSelector: '.slide',
+    
+    //events
+    onLeave: function(index, nextIndex, direction){},
+    afterLoad: function(anchorLink, index){},
+    afterRender: function(){},
+    afterResize: function(){},
+    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+    onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+  });
+  $(".mobile_nav").click(function() {
+    $(".mobile_nav_menu").animate({right: 0});
+  })
+  $(".mobile_close").click(function() {
+    $(".mobile_nav_menu").animate({right: -270});
+  })
+  $( window ).resize(function() {
+    $.fn.fullpage.reBuild();
+  });
+  
+  
+  
+  
+  
+  
+});
+</script>

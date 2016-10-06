@@ -14,148 +14,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.js"></script>
   
 </head>
-<body class="fp-responsive">
-  
-  <!-- <div class="logo col-sm-12 col-md-6">
-  <%= link_to root_url do %>
-  <%= image_tag "CourseHub-logo.png" %>
+<body>
+  <% if current_page?(root_url) %>
+  <%= render partial: 'layouts/home_nav' %>
+  <% else %>
+  <%= render partial: 'layouts/nav' %>
   <% end %>
-</div>
-<ul class="navigation col-sm-12 col-md-6">
-<% if user_signed_in? %>
-<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-<li><%= link_to 'My Dashboard', dashboard_path %></li>
-<% else %>
-<li><%= link_to 'Sign In', new_user_session_path %></li>
-<li><%= link_to 'Sign Up', new_user_registration_path %></li>
-<% end %>
-<li><%= link_to 'See All Courses', courses_path %></li>
-<li><%= link_to 'Home', root_url %></li>
-</ul> -->
-
-<div id="header_wrap">
-  <div id="header">
-    <div id="logo">
-      <%= link_to root_url do %>
-      <%= image_tag "CourseHub-logo.png" %>
-      <% end %>
-    </div>
-    <div class="nav">
-      <%= link_to 'Home', root_url %>
-      <%= link_to 'See All Courses', courses_path %>
-      <% if user_signed_in? %>
-      <%= link_to 'My Dashboard', dashboard_path %>
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-      <% else %>
-      <%= link_to 'Sign In', new_user_session_path %>
-      <%= link_to 'Sign Up', new_user_registration_path %>
-      <% end %>
-    </div>
-    <div class="mobile_nav"></div>
-    <div class="mobile_nav_menu">
-      <div class="mobile_menu">
-        <span><%= link_to 'Courses', courses_path %></span>
-        <% if user_signed_in? %>
-        <span><%= link_to 'Dashboard', dashboard_path %></span>
-        <span><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
-        <% else %>
-        <span><%= link_to 'Sign In', new_user_session_path %></span>
-        <span><%= link_to 'Sign Up', new_user_registration_path %></span>
-        <% end %>
-      </div>
-      <div class="mobile_close">
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<%= yield %>
-<br class="clr" />
-
-<script type="text/javascript">
-$(document).ready(function() {
-  $('#fullpage').fullpage({
-    //Navigation
-    menu: '#menu',
-    lockAnchors: false,
-    anchors:['Course1', 'Course2', 'Course3', 'footer'],
-    navigation: true,
-    navigationPosition: 'right',
-    navigationTooltips: ['Featured_1','Featured_2','Featured_3', 'Footer'],
-    showActiveTooltip: false,
-    slidesNavigation: true,
-    slidesNavPosition: 'bottom',
-    
-    //Scrolling
-    css3: true,
-    scrollingSpeed: 700,
-    autoScrolling: true,
-    fitToSection: true,
-    fitToSectionDelay: 1000,
-    scrollBar: false,
-    easing: 'easeInOutCubic',
-    easingcss3: 'ease',
-    loopBottom: false,
-    loopTop: false,
-    loopHorizontal: true,
-    continuousVertical: false,
-    continuousHorizontal: false,
-    scrollHorizontally: false,
-    interlockedSlides: false,
-    resetSliders: false,
-    fadingEffect: false,
-    normalScrollElements: '#element1, .element2',
-    scrollOverflow: false,
-    scrollOverflowOptions: null,
-    touchSensitivity: 15,
-    normalScrollElementTouchThreshold: 5,
-    bigSectionsDestination: null,
-    
-    //Accessibility
-    keyboardScrolling: true,
-    animateAnchor: true,
-    recordHistory: true,
-    
-    //Design
-    controlArrows: true,
-    verticalCentered: true,
-    sectionsColor : [],
-    paddingTop: '',
-    paddingBottom: '',
-    fixedElements: '',
-    responsiveWidth: 0,
-    responsiveHeight: 0,
-    responsiveSlides: true,
-    
-    //Custom selectors
-    sectionSelector: '.section',
-    slideSelector: '.slide',
-    
-    //events
-    onLeave: function(index, nextIndex, direction){},
-    afterLoad: function(anchorLink, index){},
-    afterRender: function(){},
-    afterResize: function(){},
-    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-    onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-  });
-  $(".mobile_nav").click(function() {
-    $(".mobile_nav_menu").animate({right: 0});
-  })
-  $(".mobile_close").click(function() {
-    $(".mobile_nav_menu").animate({right: -270});
-  })
-  $( window ).resize(function() {
-    $.fn.fullpage.reBuild();
-  });
+  <%= yield %>
   
   
   
-  
-  
-  
-});
-</script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<div id="dark_header_wrap">
+  <div id="dark_header">
+    <div id="logo">
+      <%= link_to root_url do %>
+      <%= image_tag "CourseHub-logo-dark.png" %>
+      <% end %>
+    </div>
+    <div class="dark-nav nav">
+      <%= link_to 'Home', root_url %>
+      <%= link_to 'See All Courses', courses_path %>
+      <% if user_signed_in? %>
+      <%= link_to 'My Dashboard', dashboard_path %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+      <% else %>
+      <%= link_to 'Sign In', new_user_session_path %>
+      <%= link_to 'Sign Up', new_user_registration_path %>
+      <% end %>
+    </div>
+    <div class="mobile_nav"></div>
+    <div class="mobile_nav_menu">
+      <div class="mobile_menu">
+        <span><%= link_to 'Courses', courses_path %></span>
+        <% if user_signed_in? %>
+        <span><%= link_to 'Dashboard', dashboard_path %></span>
+        <span><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
+        <% else %>
+        <span><%= link_to 'Sign In', new_user_session_path %></span>
+        <span><%= link_to 'Sign Up', new_user_registration_path %></span>
+        <% end %>
+      </div>
+      <div class="mobile_close">
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,28 +1,55 @@
-<div class="booyah-box">
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
+<div class="devise-wrapper">
+  <h1>
+    Sign In
+    
+  </h1>
+  
+  
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="float-label">
+    
     <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email, id: "email" %>
+    
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  
 </div>
+<div class="float-label">
+  <%= f.password_field :password, autocomplete: "off", id: 'pw' %>
+  <%= f.label :password %>
+</div>
+
+<%= f.submit "Sign in", class: "btn" %>
+<%= render "devise/shared/links" %>
+
+
+<% end %>
+</div>
+<script>(function($){
+  function floatLabel(inputType){
+    $(inputType).each(function(){
+      var input = $(this).find("input, select, textarea");
+      var label = $(this).find("label");
+      // on focus add cladd active to label
+      input.focus(function(){
+        input.next().addClass("active");
+        console.log("focus");
+      });
+      //on blur check field and remove class if needed
+      input.blur(function(){
+        if(input.val() === '' || input.val() === 'blank'){
+          label.removeClass();
+        }
+      });
+    });
+  }
+  // just add a class of "floatLabel to any group you want to have the float label interactivity"
+  floatLabel(".float-label");
+  
+  
+  //////  Just a bunch of fluff for other interactions  ////////////////////////////////////////////////////////
+  
+  //for the pw field - toggle visibility
+  
+  
+})(jQuery);</script>

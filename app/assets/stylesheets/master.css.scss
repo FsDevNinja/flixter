@@ -37,6 +37,29 @@ body {
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   padding:10px;
   margin-top: 150px;
+  
+}
+
+.red-booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 8px solid #bc0000;
+  min-height: 104px;
+  padding:10px;
+  margin-top: 150px;
+  position: relative;
+  h2{
+    margin-top: 10px;
+  }
+}
+
+.dashboard-error-button {
+  position: absolute !important;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 30px;
 }
 
 .booyah-box h2, .booyah-box h1 {
@@ -300,7 +323,12 @@ body {
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
-  
+  #home-footer{
+    font-size: 30px;
+    .teachers, .about, .contact, .social {
+      margin-bottom: 15px;
+    }
+  }
   .fp-viewing-Course1 .course_info {
     opacity: 1;
     top: 50%;
@@ -358,6 +386,7 @@ body {
 @media only screen and (min-width : 768px) {
   
   
+  
   .featured-course-img-wrapper {
     margin-left: 50px;
     height: 80%;
@@ -369,7 +398,9 @@ body {
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
   
-  
+  #home-footer{
+    font-size: 20px;
+  }
   .featured-course-img {
     
     display: block;
