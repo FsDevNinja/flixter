@@ -83,7 +83,11 @@
 }
 
 
-
+.pgbg {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
 
 
 
@@ -303,6 +307,10 @@
 //   margin-top: 150px;
 //   width: 300px;
 // }html,
+
+
+
+
 body{
   height: 100%;
   background-repeat: no-repeat;
@@ -312,7 +320,7 @@ body{
 body{
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  @include background-image(linear-gradient(to bottom right,#2CCABA, #1EC68D));
+  @include background-image(linear-gradient(to bottom right,#00A1BC, #337ab7));
   color: #fff;
 }
 
@@ -329,29 +337,20 @@ h1{
 }
 
 .devise-wrapper{
+  
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-}
-.row{
-  >div{
-    width: 33.33333333333333%;
-    display:inline-block;
-    margin-right:-5px;
-    position: relative;
-    &:after{
-      content: '';
-      border-right: 1px solid rgba(255,255,255,.7);
-      position: absolute;
-      top: 3px;
-      height: 75%;
-      right: -3px;
-    }
-    &:last-child:after{
-      display:none;
+  margin-top: 150px;
+  a {
+    color: white;
+    
+    &:hover {
+      color: white;
     }
   }
 }
+
 h1{
   font-weight: 300;
   font-size: 26px;
@@ -381,7 +380,7 @@ h1{
   padding: 15px;
   background-color: #fff;
   font-size: 18px;
-  color: #2ecc71;
+  color: #00a1bc;
   cursor: pointer;
   @include transition(all .3s ease);
   @include border-radius(0);
@@ -425,8 +424,8 @@ h1{
     font-family: 'Lato', sans-serif;
     font-size: 24px;
     border-bottom: 1px solid rgba(255,255,255,.7);
-    background: transparent;
-    color: #fff;
+    background: transparent !important;
+    color: #fff !important;
     padding: 15px 20px 10px 10px;
   }
   label{
