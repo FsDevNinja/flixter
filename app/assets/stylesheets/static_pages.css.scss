@@ -94,11 +94,62 @@
 .nav a:hover {
   border-bottom: 1px solid #fff;
 }
+
+.dark-mobile_nav {
+  display: none;
+  width: 24px;
+  height: 24px;
+  background: url(dark-mobile_nav.png) no-repeat;
+  float: right;
+  cursor: pointer;
+  margin-top: 2px;
+}
+.dark-mobile_nav_menu {
+  z-index: 3;
+  width: 220px;
+  height: 100%;
+  position: fixed;
+  padding: 11px 22px 0 0;
+  top: 0;
+  right: -270px;
+  background: url(mobile_nav_bg.png) no-repeat;
+}
+.dark-mobile_menu {
+  float: right;
+  font-weight: 400;
+  font-style: normal;
+  color: #656565;
+  font-size: 15px;
+  line-height: 32px;
+  text-align: right;
+  padding-bottom: 12px;
+  width: 60px;
+}
+.dark-mobile_menu span {
+  cursor: pointer;
+  color: #656565;
+  padding-bottom: 2px;
+}
+.dark-mobile_menu span:hover {
+  transition: all .25s ease-in-out;
+  border-bottom: 2px solid #fff;
+  
+}
+.dark-mobile_close {
+  cursor: pointer;
+  float: right;
+  width: 24px;
+  height: 24px;
+  background: url(x_close.png) no-repeat;
+  background-size: 24px 24px;
+  clear: right;
+}
+
 .mobile_nav {
   display: none;
   width: 24px;
   height: 24px;
-  background: url(http://i.piccy.info/i9/c366d5ab31a3ca2f5b5f5110434b31a9/1399749144/965/744267/mobile_nav.png) no-repeat;
+  background: url(mobile_nav.png) no-repeat;
   float: right;
   cursor: pointer;
   margin-top: 2px;
@@ -111,7 +162,7 @@
   padding: 11px 22px 0 0;
   top: 0;
   right: -270px;
-  background: url(http://i.piccy.info/i9/90d5aef311fc1a9853cce72695cdfe36/1399749183/4243/744267/mobile_nav_bg.png) no-repeat;
+  background: url(mobile_nav_bg.png) no-repeat;
 }
 .mobile_menu {
   float: right;
@@ -122,7 +173,7 @@
   line-height: 32px;
   text-align: right;
   padding-bottom: 12px;
-  width: 56px;
+  width: 60px;
 }
 .mobile_menu span {
   cursor: pointer;
@@ -139,7 +190,7 @@
   float: right;
   width: 24px;
   height: 24px;
-  background: url(http://i.piccy.info/i9/88575af4eb3ecd766a58a62971d3631e/1399749221/1231/744267/x_close.png) no-repeat;
+  background: url(x_close.png) no-repeat;
   background-size: 24px 24px;
   clear: right;
 }
@@ -148,6 +199,15 @@
     display: none;
   }
   .mobile_nav {
+    display: block;
+    
+    
+  }
+  
+  .dark-nav {
+    display: none;
+  }
+  .dark-mobile_nav {
     display: block;
     
     
@@ -171,6 +231,18 @@
   .mobile_nav_menu {
     display: none;
   }
+  
+  .dark-nav {
+    display: block;
+  }
+  .dark-mobile_nav {
+    display: none;
+  }
+  .dark-mobile_nav_menu {
+    display: none;
+  }
+  
+  
 }
 
 
@@ -372,7 +444,7 @@ h1{
   }
 }
 
-.btn{
+.devise-btn{
   font-family: 'Lato', sans-serif;
   border: none;
   width: 100%;

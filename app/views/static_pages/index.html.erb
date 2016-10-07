@@ -125,7 +125,7 @@ $(document).ready(function() {
     paddingBottom: '',
     fixedElements: '',
     responsiveWidth: 0,
-    responsiveHeight: 0,
+    responsiveHeight: 500,
     responsiveSlides: true,
     
     //Custom selectors
@@ -140,16 +140,13 @@ $(document).ready(function() {
     afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
     onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
   });
-  $(".mobile_nav").click(function() {
+  
+  $('.mobile_nav').click(function() {
     $(".mobile_nav_menu").animate({right: 0});
   })
   $(".mobile_close").click(function() {
     $(".mobile_nav_menu").animate({right: -270});
   })
-  $( window ).resize(function() {
-    $.fn.fullpage.reBuild();
-  });
-  
   
   
   

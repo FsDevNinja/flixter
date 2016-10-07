@@ -219,7 +219,7 @@ body {
 
 
 .view_course {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .view_course a{
@@ -331,13 +331,13 @@ body {
   }
   .fp-viewing-Course1 .course_info {
     opacity: 1;
-    top: 50%;
+    top: 30%;
     
   }
   
   .fp-viewing-Course2 .course_info {
     opacity: 1;
-    top: 50%;
+    top: 30%;
     
   }
   
@@ -385,7 +385,9 @@ body {
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
   
-  
+  .featured-course-title {
+    text-align: left !important;
+  }
   
   .featured-course-img-wrapper {
     margin-left: 50px;
