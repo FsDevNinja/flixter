@@ -1,27 +1,155 @@
-<div class="hero">
 
-  <div class="frosty text-center">
-    <br /><br /><br /><br /><br /><br /><br /><br />
-
-  <h1>Learn Magic from the Pros</h1>
-
-  <h2>I'm an illusionist, Michael.</h2>
-  <br />
-   <%= link_to 'Learn More', courses_path, class: 'btn btn-success' %>
-   <br /><br />
-   </div>
+<div id="fullpage">
+  <% @featured_courses.each do |course| %>
+  <div class="section" style="background-image: url(<%= course.image %>)">
+    
+    <div class="course_info col-md-12 col-lg-6">
+      <p class="category">Featured Course</p>
+      <h1 class="featured-course-title"><%= link_to course.title, course_path(course) %></h1>
+      <hr class="featued-course-title-hr">
+      
+      <div class="col-sm-12 col-md-4 .featured-course-img-wrapper"><%= image_tag course.image.course, class: 'featured-course-img' %></div>
+      <div class="view_course col-sm-12 col-md-8">
+        <p class="feature-description"><%= truncate course.description, :length   => 180, :separator => /\w/,
+        :omission => "..." %></p>
+        
+        <ul class="tags">
+          <% course_tags_for_display(course.tags).each do |tag| %>
+          <li class="tag"><%= tag %></li>
+          <% end %>
+          
+        </ul>
+        <%= link_to 'View Course', course_path(course), class: 'btn btn-primary btn-large' %>
+      </div>
+    </div>
+    
+    <div class="section-bg" ></div>
+  </div>
+  
+  <% end %>
+  <div id="home-footer" class="section text-center" style="background-image: url(assets/footerbg.jpg)">
+    <div class="section-bg" ></div>
+    
+    
+    <div class="col-sm-12 col-md-3 teachers">
+      <b>Teachers</b>
+      <br />
+      <%= link_to 'Teach a Course', new_instructor_course_path %>
+      <br />
+      <%= link_to 'My Dashboard', dashboard_path %>
+    </div>
+    <div class="col-sm-12 col-md-3 about">
+      <b>About</b>
+      <br />
+      <%= link_to 'Team', teams_path %>
+      <br />
+      <%= link_to 'Careers', careers_path %>
+      <br />
+      <%= link_to 'Privacy Policy', privacy_path %>
+    </div>
+    <div class="col-sm-12 col-md-3 contact">
+      <b>Contact</b>
+      <br />
+      Matt@fsdevninja.com
+      <br />
+      1234 Awesome Street
+      <br />
+      Chattanooga TN, 37312
+    </div>
+    <div class="col-sm-12 col-md-3 social">
+      <b>Social</b>
+      <br />
+      <%= link_to 'http://github.com/makproductions06' do %>
+      <%= image_tag 'github.png', class: 'social-button' %>
+      <% end %>
+      <%= link_to 'https://www.linkedin.com/in/mbtdesigns' do %>
+      <%= image_tag 'linkedin.png', class: 'social-button' %>
+      <% end %><%= link_to 'http://twitter.com/fsdevninja' do %>
+      <%= image_tag 'twitter.png', class: 'social-button' %>
+      <% end %>
+      
+    </div>
+    
+  </div>
 </div>
-<br />
-<div class="col-xs-10 col-xs-offset-1 features text-center">
-  <div class="col-sm-4">
-    <h3>Feature 1</h3>
-  </div>
-
-  <div class="col-sm-4">
-    <h3>Feature 2</h3>
-  </div>
-
-  <div class="col-sm-4">
-    <h3>Feature 3</h3>
-  </div>
-</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    //Navigation
+    menu: '#menu',
+    lockAnchors: false,
+    anchors:['Course1', 'Course2', 'Course3', 'footer'],
+    navigation: true,
+    navigationPosition: 'right',
+    navigationTooltips: ['Featured_1','Featured_2','Featured_3', 'Footer'],
+    showActiveTooltip: false,
+    slidesNavigation: true,
+    slidesNavPosition: 'bottom',
+    
+    //Scrolling
+    css3: true,
+    scrollingSpeed: 700,
+    autoScrolling: true,
+    fitToSection: true,
+    fitToSectionDelay: 1000,
+    scrollBar: false,
+    easing: 'easeInOutCubic',
+    easingcss3: 'ease',
+    loopBottom: false,
+    loopTop: false,
+    loopHorizontal: true,
+    continuousVertical: false,
+    continuousHorizontal: false,
+    scrollHorizontally: false,
+    interlockedSlides: false,
+    resetSliders: false,
+    fadingEffect: false,
+    normalScrollElements: '#element1, .element2',
+    scrollOverflow: false,
+    scrollOverflowOptions: null,
+    touchSensitivity: 15,
+    normalScrollElementTouchThreshold: 5,
+    bigSectionsDestination: null,
+    
+    //Accessibility
+    keyboardScrolling: true,
+    animateAnchor: true,
+    recordHistory: true,
+    
+    //Design
+    controlArrows: true,
+    verticalCentered: true,
+    sectionsColor : [],
+    paddingTop: '',
+    paddingBottom: '',
+    fixedElements: '',
+    responsiveWidth: 0,
+    responsiveHeight: 500,
+    responsiveSlides: true,
+    
+    //Custom selectors
+    sectionSelector: '.section',
+    slideSelector: '.slide',
+    
+    //events
+    onLeave: function(index, nextIndex, direction){},
+    afterLoad: function(anchorLink, index){},
+    afterRender: function(){},
+    afterResize: function(){},
+    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+    onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+  });
+  
+  $('.mobile_nav').click(function() {
+    $(".mobile_nav_menu").animate({right: 0});
+  })
+  $(".mobile_close").click(function() {
+    $(".mobile_nav_menu").animate({right: -270});
+  })
+  
+  
+  
+  
+  
+});
+</script>

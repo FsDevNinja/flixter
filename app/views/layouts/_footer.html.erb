@@ -1,0 +1,52 @@
+<div id="footer" class=" col-xs-10 col-xs-offset-1" >
+  
+  
+  <div class="col-sm-12 col-md-3 teachers">
+    <div class="text-center">
+      
+      <b>Teachers</b>
+      <br />
+      <%= link_to 'Teach a Course', new_instructor_course_path %>
+      <br />
+      <%= link_to 'My Dashboard', dashboard_path %>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-3 about">
+    <div class="text-center">
+      <b>About</b>
+      <br />
+      <%= link_to 'Team', teams_path %>
+      <br />
+      <%= link_to 'Careers', careers_path %>
+      <br />
+      <%= link_to 'Privacy Policy', privacy_path %>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-3 contact">
+    <div class="text-center">
+      <b>Contact</b>
+      <br />
+      Matt@fsdevninja.com
+      <br />
+      1234 Awesome Street
+      <br />
+      Chattanooga TN, 37312
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-3 social">
+    <div class="text-center">
+      <b>Social</b>
+      <br />
+      <%= link_to 'http://github.com/makproductions06' do %>
+      <%= image_tag 'dark-github.png', class: 'social-button' %>
+      <% end %>
+      <%= link_to 'https://www.linkedin.com/in/mbtdesigns' do %>
+      <%= image_tag 'dark-linkedin.png', class: 'social-button' %>
+      <% end %><%= link_to 'http://twitter.com/fsdevninja' do %>
+      <%= image_tag 'dark-twitter.png', class: 'social-button' %>
+      <% end %>
+    </div>
+    
+  </div>
+  
+</div>

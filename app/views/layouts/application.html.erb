@@ -1,86 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Flixter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>CourseHub</title>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://vjs.zencdn.net/5.0.2/video-js.css" rel="stylesheet">
   <script src="https://vjs.zencdn.net/5.0.2/video.js"></script>
-</head>
-<body class="Site">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/vendors/scrolloverflow.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   
-  <div class="navbar-wrapper">
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to 'Flixter', root_url, class: 'navbar-brand' %>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><p class="notice"><%= notice %></p></li>
-            <li><p class="alert"><%= alert %></p></li>
-            <li><%= link_to 'See All Courses', courses_path %></li>
-            <% if user_signed_in? %>
-            <li><%= link_to 'My Dashboard', dashboard_path %></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-            <% else %>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class="Site-content">
-    <%= yield %>
-  </div>
-  <br class="clr" />
-  <div id="footer">
-    <div class="container">
-      <div class="col-xs-12 col-sm-3">
-        <b>Teachers</b>
-        <br />
-        <%= link_to 'Teach a Course', new_instructor_course_path %>
-        <br />
-        <%= link_to 'My Dashboard', dashboard_path %>
-      </div>
-      <div class="col-xs-12 col-sm-3">
-        <b>About</b>
-        <br />
-        <%= link_to 'Team', '#' %>
-        <br />
-        <%= link_to 'Careers', '#' %>
-        <br />
-        <%= link_to 'Privacy Policy', privacy_path %>
-      </div>
-      <div class="col-xs-12 col-sm-3">
-        <b>Contact</b>
-        <br />
-        Matt@mbtdesigns.com
-        <br />
-        7724 Mouse Creek Rd NW
-        <br />
-        Cleveland TN, 37312
-      </div>
-      <div class="col-xs-12 col-sm-3">
-        <b>Social</b>
-        <br />
-        <br />
-        <%= link_to 'http://github.com/makproductions06' do %>
-        <%= image_tag 'github.png', class: 'social-button' %>
-        <% end %>
-        <%= image_tag 'linkedin.png', class: 'social-button' %>
-        <%= image_tag 'twitter.png', class: 'social-button' %>
-      </div>
-    </div>
-  </div>
+</head>
+<body>
+  <% if current_page?(root_url) %>
+  <%= render partial: 'layouts/home_nav' %>
+  <% else %>
+  <%= render partial: 'layouts/nav' %>
+  <% end %>
+  <%= yield %>
+  <% if current_page?(root_url) %>
+  
+  <% else %>
+  <%= render partial: 'layouts/footer' %>
+  <% end %>
+  
+  
+  <script>(function($){
+    function floatLabel(inputType){
+      $(inputType).each(function(){
+        var input = $(this).find("input, select, textarea");
+        var label = $(this).find("label");
+        // on focus add cladd active to label
+        input.focus(function(){
+          input.next().addClass("active");
+          console.log("focus");
+        });
+        //on blur check field and remove class if needed
+        input.blur(function(){
+          if(input.val() === '' || input.val() === 'blank'){
+            label.removeClass();
+          }
+        });
+      });
+    }
+    // just add a class of "floatLabel to any group you want to have the float label interactivity"
+    floatLabel(".float-label");
+    
+    
+    $('.dark-mobile_nav').click(function() {
+      $(".dark-mobile_nav_menu").animate({right: 0});
+    });
+    $(".dark-mobile_close").click(function() {
+      $(".dark-mobile_nav_menu").animate({right: -270});
+    });
+    
+    
+    
+    
+  })(jQuery);</script>
+  
+  
 </body>
 </html>

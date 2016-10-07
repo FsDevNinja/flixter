@@ -7,6 +7,7 @@ gem 'mini_magick', '~> 4.3.1'
 gem 'carrierwave-aws'
 gem "figaro"
 gem 'simple_form'
+gem 'compass-rails'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'devise'
 gem 'rails_12factor', group: :production
