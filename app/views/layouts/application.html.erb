@@ -12,6 +12,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/vendors/scrolloverflow.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   
 </head>
 <body>
@@ -21,6 +22,11 @@
   <%= render partial: 'layouts/nav' %>
   <% end %>
   <%= yield %>
+  <% if current_page?(root_url) %>
+  
+  <% else %>
+  <%= render partial: 'layouts/footer' %>
+  <% end %>
   
   
   <script>(function($){
@@ -44,9 +50,19 @@
     // just add a class of "floatLabel to any group you want to have the float label interactivity"
     floatLabel(".float-label");
     
+    
+    $('.dark-mobile_nav').click(function() {
+      $(".dark-mobile_nav_menu").animate({right: 0});
+    });
+    $(".dark-mobile_close").click(function() {
+      $(".dark-mobile_nav_menu").animate({right: -270});
+    });
+    
+    
+    
+    
   })(jQuery);</script>
   
   
-  </body>
-  </html>
-  
+</body>
+</html>
