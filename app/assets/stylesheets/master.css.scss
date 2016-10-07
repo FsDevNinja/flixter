@@ -15,12 +15,51 @@ body {
 .clr {
   clear:both;
 }
+h1 {
+  text-align: left;
+}
+
+.label {
+  font-size: 25px !important;
+  border-radius: 0 !important;
+}
+
+.label-default {
+  background-color: #222222 !important;
+}
+.instructor-course-title {
+  margin-top: 0px !important;
+  a {
+    color: #121212;
+    &:hover {
+      color: #121212;
+      text-decoration: none;
+    }
+  }
+}
+.btn-primary {
+  border-color: #337ab7;
+  background-color: #00A1BC !important;
+}
 
 
 .btn {
-  border-radius: 0px;
+  
+  border-radius: 0px !important;
 }
 
+.course-btn {
+  width: 100%;
+  margin-bottom: 15px !important;
+}
+
+.course-desc {
+  margin: 0 0 25px 0;
+}
+
+.margin-auto {
+  margin: auto;
+}
 
 body {
   background-color: #121212;
@@ -35,7 +74,7 @@ body {
   background: #fff;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-  padding:10px 10px 50px;
+  padding:25px 10px 15px;
   margin-top: 150px;
   
 }
@@ -62,9 +101,7 @@ body {
   right: 30px;
 }
 
-.booyah-box h2, .booyah-box h1 {
-  margin:10px;
-}
+
 
 #footer {
   margin-top: 150px;
@@ -101,24 +138,47 @@ body {
 }
 
 .lesson {
-  background-color:black;
+  background-color: #333333;
   margin-top:10px;
   height:130px;
   padding: 5px;
 }
 
-.section-li {
-  padding:20px;
-  margin:20px;
+.section-header {
+  color: white;
+  float: left;
 }
-.section {
+
+.add-section {
+  margin: 0 15px;
+}
+
+.course-sections-li {
+  background-color: #121212;
+  margin: 25px 0;
   padding: 20px;
 }
+.course-sections {
+  
+  
+  margin: 0 15px;
+}
+
+.placeholder {
+  background-color: #00a1bc;
+  width: 100%;
+  height: auto;
+}
+
 .lesson a {
   color:white;
   font-family: "Helvetica Neue",Helvetica;
   font-weight:100;
   font-size: 15px;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .lesson a b {
@@ -136,7 +196,7 @@ body {
 }
 
 .lessons li {
-  background:black;
+  background: #333333;
   color:white;
   margin:10px;
   font-family: "Helvetica Neue", Helvetica;
@@ -308,10 +368,6 @@ body {
     color: #ffffff;
     text-decoration: none;
   }
-}
-
-.teachers {
-  
 }
 
 
