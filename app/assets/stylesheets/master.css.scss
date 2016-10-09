@@ -101,7 +101,11 @@ body {
   right: 30px;
 }
 
-
+.stripe-button-el {
+  border-radius: 0px !important;
+  background-image: none !important;
+  background-color: #00A1BC !important;
+}
 
 #footer {
   margin-top: 150px;

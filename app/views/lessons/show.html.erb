@@ -1,15 +1,17 @@
 
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <h1><%= current_lesson.title %></h1>
-  <p class="pull-left">
+  <p class="clr">
     <%= current_lesson.subtitle %>
     </p
     
-    <% if current_lesson.next_lesson.present? %>
-    <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default pull-right' do %>
-    Next Lesson
-    <span class="glyphicon glyphicon-forward"></span>
-    <% end %>
+    <!-- <% if current_lesson.next_lesson.present? %> -->
+    <%= link_to lesson_path(current_lesson.next_lesson) do %>
+    <div class="btn btn-primary pull-right">
+      Next Lesson
+      <span class="glyphicon glyphicon-forward"></span>
+    </div>
+    <!-- <% end %> -->
     <% end %>
     
     <br class="clr" />
