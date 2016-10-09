@@ -266,7 +266,7 @@
   margin:auto;
   box-shadow:
   0px 30px 30px -20px rgba(0,0,0,1),
-  inset 0 0 0 1000px rgba(0,127,255,.6);
+  inset 0 0 0 1000px rgba(0,161,188,.6);
   transition: all .4s cubic-bezier(.37,.26,.35,1)
 }
 #card:hover {
@@ -342,9 +342,9 @@
   0%   {
     box-shadow:
     0px 30px 30px -25px rgba(0,0,0,0.6),
-    0px 0px 0px 0px rgba(0,127,255,1),
-    0px 0px 0px 0px rgba(0,127,255,.7),
-    0px 0px 0px 0px rgba(0,127,255,.5);
+    0px 0px 0px 0px rgba(0,161,188,1),
+    0px 0px 0px 0px rgba(0,161,188,.7),
+    0px 0px 0px 0px rgba(0,161,188,.5);
   }
   100% {
     box-shadow:

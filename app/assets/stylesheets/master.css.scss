@@ -115,6 +115,16 @@ body {
   
 }
 
+.fixed {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  z-index: 1000;
+}
+
+.alert {
+  transition: all 1s ease;
+}
 
 #home-footer {
   font-size: 35px;
@@ -163,7 +173,7 @@ body {
   padding: 20px;
 }
 .course-sections {
-  
+  padding: 0;
   
   margin: 0 15px;
 }
