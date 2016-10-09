@@ -154,8 +154,13 @@ body {
 .lesson {
   background-color: #333333;
   margin-top:10px;
-  height:130px;
+  
   padding: 5px;
+  
+}
+
+ul .lessons {
+  padding-left: 0 !important;
 }
 
 .section-header {
@@ -403,10 +408,18 @@ body {
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
   #home-footer{
-    font-size: 30px;
+    font-size: 20px;
     .teachers, .about, .contact, .social {
       margin-bottom: 15px;
     }
+  }
+  
+  .lesson {
+    height: 100%;
+  }
+  
+  .pgbg {
+    height: 2500px;
   }
   
   #footer{
@@ -483,7 +496,13 @@ body {
     margin-top: 150px;
   }
   
+  .lesson {
+    height: 265px;
+  }
   
+  .pgbg {
+    height: 1400px;
+  }
   
   .featured-course-title {
     text-align: left !important;
@@ -499,6 +518,10 @@ body {
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
+  
+  .lesson {
+    height: 200px;
+  }
   
   #home-footer{
     font-size: 20px;
@@ -553,5 +576,11 @@ body {
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
+  .pgbg {
+    height: 100%;
+  }
   
+  .lesson {
+    height: 150px;
+  }
 }
