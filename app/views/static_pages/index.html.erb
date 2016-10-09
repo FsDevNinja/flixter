@@ -14,7 +14,7 @@
         :omission => "..." %></p>
         
         <ul class="tags">
-          <% if !course.tags.empty? %>
+          <% if course.tags.present? %>
           <% course_tags_for_display(course.tags).each do |tag| %>
           <li class="tag"><%= tag %></li>
           <% end %>
