@@ -364,37 +364,31 @@
 // DEVISE LOGIN
 
 
-@import "compass";
-@import "compass/reset";
-@import "compass/css3";
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 
-
-
-*{
-  @include box-sizing(border-box);
-}
-
-// .devise-wrapper {
-//   margin-top: 150px;
-//   width: 300px;
-// }html,
-
-
-
-
-body{
+html {
   height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background: rgba(0,160,188,1);
+  background: -moz-linear-gradient(-45deg, rgba(0,160,188,1) 0%, rgba(51,121,183,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0,160,188,1)), color-stop(100%, rgba(51,121,183,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(0,160,188,1) 0%, rgba(51,121,183,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(0,160,188,1) 0%, rgba(51,121,183,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(0,160,188,1) 0%, rgba(51,121,183,1) 100%);
+  background: linear-gradient(135deg, rgba(0,160,188,1) 0%, rgba(51,121,183,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a0bc', endColorstr='#3379b7', GradientType=1 );
+  color: #fff;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-body{
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  @include background-image(linear-gradient(to bottom right,#00A1BC, #337ab7));
-  color: #fff;
-}
+
+
+
+
+
 
 
 h1{
@@ -429,19 +423,7 @@ h1{
   line-height: 3;
   margin-bottom: 25px;
   text-align: center;
-  .fa-camera-retro{
-    $size: 100px;
-    width: $size;
-    height: $size;
-    line-height: $size;
-    border: 2px solid #fff;
-    cursor: pointer;
-    @include border-radius(50%);
-    @include transition(background-color .3s ease);
-    &:hover{
-      background-color: rgba(255,255,255,.2);
-    }
-  }
+  
 }
 
 .devise-btn{
@@ -454,8 +436,11 @@ h1{
   font-size: 18px;
   color: #00a1bc;
   cursor: pointer;
-  @include transition(all .3s ease);
-  @include border-radius(0);
+  border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border: 0px solid #000000;
+  
   &:hover,
   &:focus{
     color: #333;
@@ -490,7 +475,10 @@ h1{
     width: 100%;
     display:block;
     cursor: pointer;
-    @include border-radius(0);
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    border: 0px solid #000000;
     
     //Main style
     font-family: 'Lato', sans-serif;
@@ -506,7 +494,7 @@ h1{
     top: 18px;
     color: #fff;
     pointer-events: none;
-    @include transition(all .2s ease);
+    transform: transition(all .2s ease);
     &.active{
       font-size: 14px;
       font-weight: 400;

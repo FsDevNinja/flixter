@@ -14,10 +14,11 @@
         :omission => "..." %></p>
         
         <ul class="tags">
+          <% if !course.tags.empty? %>
           <% course_tags_for_display(course.tags).each do |tag| %>
           <li class="tag"><%= tag %></li>
           <% end %>
-          
+          <% end %>
         </ul>
         <%= link_to 'View Course', course_path(course), class: 'btn btn-primary btn-large' %>
       </div>
