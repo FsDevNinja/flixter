@@ -1,9 +1,9 @@
 
 <div id="fullpage">
-  <% @featured_courses.each do |course| %>
+  <% @featured_courses.each_with_index do |course, index| %>
   <div class="section" style="background-image: url(<%= course.image %>)">
     
-    <div class="course_info col-md-12 col-lg-6">
+    <div class="course_info_<%= (index + 1) %> col-md-12 col-lg-6">
       <p class="category">Featured Course</p>
       <h1 class="featured-course-title"><%= link_to course.title, course_path(course) %></h1>
       <hr class="featued-course-title-hr">
@@ -41,7 +41,7 @@
     <div class="col-sm-12 col-md-3 about">
       <b>About</b>
       <br />
-      <%= link_to 'Team', teams_path %>
+      <%= link_to 'Team', team_path %>
       <br />
       <%= link_to 'Privacy Policy', privacy_path %>
     </div>

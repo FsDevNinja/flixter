@@ -263,7 +263,7 @@ body {
   z-index: 0;
 }
 
-.course_info {
+.course_info_1, .course_info_2, .course_info_3 {
   position: absolute !important;
   z-index: 3;
   top: 50%;
@@ -332,17 +332,25 @@ body {
 }
 
 
-.fp-viewing-Course1 .course_info {
+.fp-viewing-Course1 .course_info_1 {
   opacity: 1;
   top: 25%;
   
 }
 
-.fp-viewing-Course2 .course_info {
+.fp-viewing-Course2 .course_info_2 {
   opacity: 1;
   top: 25%;
   
 }
+
+.fp-viewing-Course3 .course_info_3 {
+  opacity: 1;
+  top: 25%;
+  
+}
+
+
 
 .content {
   width: 90%;
@@ -400,13 +408,19 @@ body {
   
   
   
-  .fp-viewing-Course1 .course_info {
+  .fp-viewing-Course1 .course_info_1 {
     opacity: 1;
     top: 30%;
     
   }
   
-  .fp-viewing-Course2 .course_info {
+  .fp-viewing-Course2 .course_info_2 {
+    opacity: 1;
+    top: 30%;
+    
+  }
+  
+  .fp-viewing-Course3 .course_info_3 {
     opacity: 1;
     top: 30%;
     
@@ -484,13 +498,19 @@ body {
     display: block;
     margin-bottom: 25px;
   }
-  .fp-viewing-Course1 .course_info {
+  .fp-viewing-Course1 .course_info_1 {
     opacity: 1;
     top: 35vh;
     
   }
   
-  .fp-viewing-Course2 .course_info {
+  .fp-viewing-Course2 .course_info_2 {
+    opacity: 1;
+    top: 35vh;
+    
+  }
+  
+  .fp-viewing-Course3 .course_info_3 {
     opacity: 1;
     top: 35vh;
     
@@ -499,7 +519,7 @@ body {
     margin-bottom: 100px;
   }
   
-  .course_info {
+  .course_info_1, .course_info_2, .course_info_3  {
     padding-left: 50px !important;
   }
   

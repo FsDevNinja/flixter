@@ -1,24 +1,27 @@
 <br />
 
-
-
 <% if !current_user.enrolled_courses.empty?%>
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-  <h1>What I'm Learning</h1>
+  <div class="col-xs-12">
+    <h1>What I'm Learning</h1>
+  </div>
+  <hr>
+  <br class="clr">
+  <br>
   <% current_user.enrolled_courses.each do |course| %>
-  <h3 class="text-center">
+  <div class="col-xs-12 col-md-6">
+    <%= image_tag course.image, class: 'img-responsive' %>
+  </div>
+  <div class="col-xs-12 col-md-6"></div>
+  <h3 class="instructor-course-title">
     <%= link_to course.title, course_path(course) %>
   </h3>
+  
+  <%= course.description %>
   <br />
-  <%= image_tag course.image, class: 'img-responsive' %>
-  <br />
+  <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary course-btn ' %>
   <div class="col-xs-12 col-sm-8">
-    <%= course.description %>
-  </div>
-  <div class="col-xs-12 col-sm-4 text-center">
-    <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary ' %>
-    <hr class="col-xs-8 col-xs-offset-2">
-    <br class="clr" / >
+    
   </div>
   
   <% end %>
@@ -27,25 +30,34 @@
 <div class="red-booyah-box col-xs-10 col-xs-offset-1">
   <h2 class=" col-sm-8">Looks Like You are not enrolled in any classes.</h2>
   <%= link_to "See All Courses", courses_path, class: 'btn btn-lg btn-danger  col-sm-4 dashboard-error-button' %>
-  <% end %>
+  
 </div>
+<% end %>
+
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-  <h1>What I'm Teaching</h1>
-  <% current_user.courses.each do |course| %>
-  <h3 class="text-center">
-    <%= link_to course.title, course_path(course) %>
-  </h3>
-  <br />
-  <%= image_tag course.image, class: 'img-responsive' %>
-  <br />
-  <div class="col-xs-12 col-sm-8">
-    <%= course.description %>
+  <div class="col-xs-12">
+    <h1>What I'm Teaching</h1>
   </div>
-  <div class="col-xs-12 col-sm-4 text-center">
+  <hr>
+  <br class="clr">
+  <br>
+  <% current_user.courses.each do |course| %>
+  <div class="col-xs-12 col-md-6">
+    <%= image_tag course.image, class: 'img-responsive' %>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <h3 class="instructor-course-title">
+      <%= link_to course.title, course_path(course) %>
+    </h3>
+    
+    <%= course.description %>
+    <br /><br />
     <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary' %>
   </div>
-  <hr class="col-xs-8 col-xs-offset-2">
-  <br class="clr" / >
+  <br class="clr">
+  <br>
+  <hr>
+  <br>
   <% end %>
   
 </div>

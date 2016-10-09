@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
     
   end
   
-  def Teams
+  def team
   end
   
 end

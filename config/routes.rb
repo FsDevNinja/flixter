@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'static_pages#index'
   get 'privacy', to: 'static_pages#privacy'
-  get 'teams', to: 'static_pages#teams'
+  get 'team', to: 'static_pages#team'
   
   
   resources :courses, only: [:index, :show] do
